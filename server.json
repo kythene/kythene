@@ -1,0 +1,16 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "com.kythene/kythene",
+  "description": "Shared context for AI-native teams - your AI publishes work, reads your teammates', and remembers it together. Remote MCP, OAuth, free solo.",
+  "repository": {
+    "url": "https://github.com/kythene/kythene",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://kythene.com/mcp/kythene"
+    }
+  ]
+}
