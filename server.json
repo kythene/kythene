@@ -1,12 +1,30 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.kythene/kythene",
+  "title": "Kythene",
   "description": "Shared context for AI-native teams: your AI publishes, reads teammates' work, and remembers it.",
   "repository": {
     "url": "https://github.com/kythene/kythene",
     "source": "github"
   },
-  "version": "1.0.0",
+  "websiteUrl": "https://www.kythene.com",
+  "icons": [
+    {
+      "src": "https://kythene.com/favicon-512x512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    },
+    {
+      "src": "https://kythene.com/favicon.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": [
+        "any"
+      ]
+    }
+  ],
+  "version": "1.0.1",
   "remotes": [
     {
       "type": "streamable-http",
