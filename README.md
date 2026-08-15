@@ -5,8 +5,7 @@
 <h1 align="center">Kythene</h1>
 
 <p align="center">
-  Shared context for AI-native teams - your AI publishes work, reads your
-  teammates', and remembers it together. Remote MCP, OAuth, free for one.
+  Work on each other's output - your team and their AI.
 </p>
 
 <p align="center">
@@ -18,22 +17,7 @@
 
 ---
 
-Kythene is the shared context layer for AI-native teams. People and their AI
-instances publish outputs, see what everyone is producing, read each other's
-work over MCP, and write to a memory that grows instead of evaporating - so your
-AI starts each session caught up on what the team already worked out.
-
-It joins up four things no other tool combines:
-
-- **Output sharing** - files, binaries, JSON, datasets, not just renderable pages.
-- **Team visibility** - one timeline of what everyone and their AI is producing.
-- **Review & approval as provenance** - sign-off recorded against any output.
-- **Collective memory** - per-project and team-wide, that instances read and write.
-
-Cross-vendor, self-hostable, priced for small teams. The hard part was never
-storing knowledge; it's getting an instance to *apply* it - so Kythene is built
-around that: context your AI actually uses, in the flow of work, with sign-off
-you can trust.
+Kythene is where a team and their AI instances work on each other's output: publish any result, review it down to the individual block, approve it, and have the feedback land back in the AI that made it, with the reviewed work accreting into a memory the whole team recalls. It connects over MCP to Claude, Cursor, Codex and other assistants, and runs hosted or self-hosted on your own infrastructure.
 
 ## Connect in one paste
 
@@ -51,23 +35,71 @@ https://kythene.com/mcp/kythene
 
 A standard **remote, streamable-HTTP** MCP server. Auth is **OAuth 2.0 with
 Dynamic Client Registration** - the client registers itself and you authorise in
-the browser; there is no API key to copy for MCP. Self-host installs serve the
-same endpoint at their own domain.
+the browser; there is no API key to copy. Self-host installs serve the same
+endpoint at their own domain.
 
-**Tools:** recall, remember, publish, version, timeline, get, comment, approve,
-review (block-level), activity, presence, inbox.
+## Tools
 
-**Clients:** Claude (Code, desktop, web), Cursor, Codex, GitHub Copilot, and any
-other MCP-capable assistant.
+Kythene exposes **38** MCP tools. This list is generated from the
+running server, so it is exactly what the current release ships:
 
-## Links
+- **`activity`** - Report what you are working on (areas: file paths, modules, topics).
+- **`approve`** - Approve (approved=true) or reject (approved=false, note required) a collection or artifact at its current revision/version.
+- **`archive_collection`** - Archive a collection: a reversible retirement that hides it from the timeline, recall and search until restored.
+- **`cancel_delete`** - Cancel a scheduled deletion, leaving the collection archived.
+- **`catchup`** - See what changed since your instance last looked - call this at the START of a session to open caught up.
+- **`comment`** - Comment on a collection or artifact; the comment pins to its current revision/version.
+- **`create_share_code`** - Mint a share code for a tag (a label or a project) - a private link for someone outside the space.
+- **`delete_collection`** - Schedule an ARCHIVED collection for permanent deletion.
+- **`delete_tag`** - Permanently delete a tag (`tag` is an id or name).
+- **`deprecate`** - Mark a memory stale by id so recall stops surfacing it (instances stop applying it), while it stays retrievable for audit - prefer this over forget when…
+- **`forget`** - Permanently remove a memory by id.
+- **`get_artifact`** - Get an artifact's metadata and version history; set include_content to fetch the bytes of a version (0 = latest).
+- **`get_collection`** - Get a collection with its member artifacts and tags.
+- **`get_workspace_guide`** - Read this workspace's operating manual - the house rules for writing here (style, tag taxonomy, memory vs collection, what belongs and what does not).
+- **`inbox`** - Feedback on your publishes since a time (comments, approvals, rejections).
+- **`link_memory`** - Link one memory to another (from_id -> to_id), creating a curated relationship in the memory graph.
+- **`list_projects`** - List the projects (project-kind tags) in the space - the valid `project` values for recall, remember and publish.
+- **`list_share_codes`** - List share codes.
+- **`list_spaces`** - Your member spaces - the valid share targets.
+- **`merge_tags`** - Merge one or more source tags into a target: their collections are re-tagged onto the target, then the sources are deleted.
+- **`pending`** - Your personal inbox across ALL your workspaces (#126): items addressed to YOU - approvals/rejections and comments on your work, block feedback, and memories…
+- **`presence`** - Who is working on what right now (last 30 minutes), with areas touched by more than one instance flagged as conflicts.
+- **`promote_memory`** - Promote a memory into another workspace you belong to (from a private/personal workspace to a team).
+- **`publish`** - Publish one or more artifacts as a collection - make work known to the space (kythe it).
+- **`push_version`** - Push a new version of an existing artifact.
+- **`readers`** - Which instances read a collection or artifact (lineage).
+- **`recall`** - Recall the most relevant context, with full content, in one call.
+- **`remember`** - Store a memory (markdown body).
+- **`rename_tag`** - Rename a tag (`tag` is an id or name).
+- **`restore_collection`** - Restore an archived collection to the live state (also cancels any scheduled deletion).
+- **`review_block`** - Flag one block of a renderable artifact and optionally comment on it - the block-level equivalent of comment/approve.
+- **`revoke_share_code`** - Revoke a share code by id (from list_share_codes).
+- **`set_review`** - Turn the approval-review flow on or off for an existing collection (requested=true to request review, false to cancel).
+- **`set_workspace_guide`** - Replace this workspace's operating manual (owner/admin only).
+- **`share_to_space`** - Map a collection into another space you belong to (e.g. a shared client space).
+- **`timeline`** - List the collections visible in your space, newest first.
+- **`unlink_memory`** - Remove an explicit link between two memories (from_id -> to_id).
+- **`unshare`** - Remove a collection's mapping from a space (not its origin).
 
-- **App:** https://kythene.com
-- **Getting started:** https://www.kythene.com/docs/getting-started
-- **Pricing:** https://www.kythene.com/pricing - free for one person, per-seat for teams
-- **Self-hosting:** https://www.kythene.com/self-hosting - free for one, licensed for teams
+
+## Clients
+
+Claude (Code, desktop, web), Cursor, Codex, GitHub Copilot, and any other
+MCP-capable assistant.
+
+## Pricing
+
+- **Free solo** (hosted) - Free, one signed-in user
+- **Team** (hosted) - $15 per user / month, or $150 per user / year
+- **Free self-host** - Free, one signed-in user
+- **Self-host Team** - $150 per user / year, billed annually · from 5 users
+
+Enterprise (hosted or self-host) is contact-us. Full pricing:
+**[www.kythene.com/pricing](https://www.kythene.com/pricing)**.
 
 ---
 
 Kythene is a hosted and self-hostable product; this repository is its public
-landing page for MCP directories and carries no source.
+landing page for MCP directories and carries no source. Licensed under
+[BSD-2-Clause](./LICENSE).

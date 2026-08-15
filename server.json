@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.kythene/kythene",
   "title": "Kythene",
-  "description": "Shared context for AI-native teams: your AI publishes, reads teammates' work, and remembers it.",
+  "description": "Kythene is where a team and their AI instances work on each other's output: publish any result, review it down to the individual block, approve it, and have the feedback land back in the AI that made it, with the reviewed work accreting into a memory the whole team recalls.",
   "repository": {
     "url": "https://github.com/kythene/kythene",
     "source": "github"
@@ -24,7 +24,7 @@
       ]
     }
   ],
-  "version": "1.0.1",
+  "version": "1.1.0",
   "remotes": [
     {
       "type": "streamable-http",
