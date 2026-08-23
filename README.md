@@ -40,7 +40,7 @@ endpoint at their own domain.
 
 ## Tools
 
-Kythene exposes **42** MCP tools. This list is generated from the
+Kythene exposes **45** MCP tools. This list is generated from the
 running server, so it is exactly what the current release ships:
 
 - **`activity`** - Report what you are working on (areas: file paths, modules, topics).
@@ -80,10 +80,13 @@ running server, so it is exactly what the current release ships:
 - **`review_block`** - Flag one block of a renderable artifact and optionally comment on it - the block-level equivalent of comment/approve.
 - **`revoke_share_code`** - Revoke a share code by id (from list_share_codes).
 - **`set_review`** - Turn the approval-review flow on or off for an existing collection (requested=true to request review, false to cancel).
+- **`set_share_pin`** - Set, change or (with an empty `pin`) clear a share code's second-factor PIN, WITHOUT changing the code - so rotating the PIN never invalidates the link already…
+- **`set_tag_password`** - Set (or clear) a tag's anonymous-view password.
 - **`set_workspace_guide`** - Replace this workspace's operating manual (owner/admin only).
 - **`share_to_space`** - Map a collection into another space you belong to (e.g. a shared client space).
 - **`timeline`** - List the collections visible in your space, newest first.
 - **`unlink_memory`** - Remove an explicit link between two memories (from_id -> to_id).
+- **`unlock_share_code`** - Clear a share code's brute-force lockout so the holder can enter the PIN again (a code locks after too many wrong PINs).
 - **`unshare`** - Remove a collection's mapping from a space (not its origin).
 
 
