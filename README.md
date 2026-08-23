@@ -40,10 +40,11 @@ endpoint at their own domain.
 
 ## Tools
 
-Kythene exposes **38** MCP tools. This list is generated from the
+Kythene exposes **41** MCP tools. This list is generated from the
 running server, so it is exactly what the current release ships:
 
 - **`activity`** - Report what you are working on (areas: file paths, modules, topics).
+- **`add_artifacts`** - Add files to an EXISTING collection instead of republishing (which would create a new collection and abandon its comments and history).
 - **`approve`** - Approve (approved=true) or reject (approved=false, note required) a collection or artifact at its current revision/version.
 - **`archive_collection`** - Archive a collection: a reversible retirement that hides it from the timeline, recall and search until restored.
 - **`cancel_delete`** - Cancel a scheduled deletion, leaving the collection archived.
@@ -63,6 +64,7 @@ running server, so it is exactly what the current release ships:
 - **`list_share_codes`** - List share codes.
 - **`list_spaces`** - Your member spaces - the valid share targets.
 - **`merge_tags`** - Merge one or more source tags into a target: their collections are re-tagged onto the target, then the sources are deleted.
+- **`move_artifact`** - Move one file from one collection to another in the same workspace, carrying its comments, reviews and version history.
 - **`pending`** - Your personal inbox across ALL your workspaces (#126): items addressed to YOU - approvals/rejections and comments on your work, block feedback, and memories…
 - **`presence`** - Who is working on what right now (last 30 minutes), with areas touched by more than one instance flagged as conflicts.
 - **`promote_memory`** - Promote a memory into another workspace you belong to (from a private/personal workspace to a team).
@@ -72,6 +74,7 @@ running server, so it is exactly what the current release ships:
 - **`recall`** - Recall the most relevant context, with full content, in one call.
 - **`remember`** - Store a memory (markdown body).
 - **`rename_tag`** - Rename a tag (`tag` is an id or name).
+- **`reorder_artifacts`** - Set the order of a collection's files.
 - **`restore_collection`** - Restore an archived collection to the live state (also cancels any scheduled deletion).
 - **`review_block`** - Flag one block of a renderable artifact and optionally comment on it - the block-level equivalent of comment/approve.
 - **`revoke_share_code`** - Revoke a share code by id (from list_share_codes).
