@@ -40,7 +40,7 @@ endpoint at their own domain.
 
 ## Tools
 
-Kythene exposes **41** MCP tools. This list is generated from the
+Kythene exposes **42** MCP tools. This list is generated from the
 running server, so it is exactly what the current release ships:
 
 - **`activity`** - Report what you are working on (areas: file paths, modules, topics).
@@ -57,6 +57,7 @@ running server, so it is exactly what the current release ships:
 - **`forget`** - Permanently remove a memory by id.
 - **`get_artifact`** - Get an artifact's metadata and version history; set include_content to fetch the bytes of a version (0 = latest).
 - **`get_collection`** - Get a collection with its member artifacts and tags.
+- **`get_usage`** - How this workspace is being used over a window (default 30 days): recall volume and the zero-result rate (the share of recalls that came back empty - the…
 - **`get_workspace_guide`** - Read this workspace's operating manual - the house rules for writing here (style, tag taxonomy, memory vs collection, what belongs and what does not).
 - **`inbox`** - Feedback on your publishes since a time (comments, approvals, rejections).
 - **`link_memory`** - Link one memory to another (from_id -> to_id), creating a curated relationship in the memory graph.
