@@ -1,8 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Kythene">
   <rect width="512" height="512" rx="114" fill="#0D1B1E"/>
-  <g transform="translate(256 256) scale(2.9) translate(-60 -60)">
-    <path d="M60 32.29 A32 32 0 0 1 60 87.71 A32 32 0 0 1 60 32.29 Z" fill="#F2F6F6"/>
-    <circle cx="44" cy="60" r="32" fill="none" stroke="#F0776A" stroke-width="6"/>
-    <circle cx="76" cy="60" r="32" fill="none" stroke="#8E8BF2" stroke-width="6"/>
+  <g transform="translate(256 256) scale(3.23) translate(-60 -60)">
+    <defs>
+      <mask id="ka"><rect x="0" y="0" width="120" height="120" fill="#fff"/><circle cx="72" cy="60" r="31" fill="#000"/></mask>
+      <mask id="kb"><rect x="0" y="0" width="120" height="120" fill="#fff"/><circle cx="48" cy="60" r="31" fill="#000"/></mask>
+    </defs>
+    <circle cx="48" cy="60" r="31" fill="#F0776A" opacity=".5"/>
+    <circle cx="72" cy="60" r="31" fill="#8E8BF2" opacity=".5"/>
+    <path d="M60 31.4168 A31 31 0 0 1 60 88.5832 A31 31 0 0 1 60 31.4168 Z" fill="#F2F6F6"/>
+    <g fill="none" stroke-width="7">
+      <circle cx="48" cy="60" r="27.5" stroke="#F0776A" mask="url(#ka)"/>
+      <circle cx="72" cy="60" r="27.5" stroke="#8E8BF2" mask="url(#kb)"/>
+    </g>
   </g>
 </svg>
