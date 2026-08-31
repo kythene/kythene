@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Kythene">
   <rect width="512" height="512" rx="114" fill="#0D1B1E"/>
-  <g transform="translate(256 256) scale(3.23) translate(-60 -60)">
+  <g transform="translate(256 256) scale(3.44) translate(-60 -60)">
     <defs>
       <mask id="ka"><rect x="0" y="0" width="120" height="120" fill="#fff"/><circle cx="72" cy="60" r="31" fill="#000"/></mask>
       <mask id="kb"><rect x="0" y="0" width="120" height="120" fill="#fff"/><circle cx="48" cy="60" r="31" fill="#000"/></mask>

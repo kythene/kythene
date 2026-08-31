@@ -40,13 +40,14 @@ endpoint at their own domain.
 
 ## Tools
 
-Kythene exposes **45** MCP tools. This list is generated from the
+Kythene exposes **48** MCP tools. This list is generated from the
 running server, so it is exactly what the current release ships:
 
 - **`activity`** - Report what you are working on (areas: file paths, modules, topics).
 - **`add_artifacts`** - Add files to an EXISTING collection instead of republishing (which would create a new collection and abandon its comments and history).
 - **`approve`** - Approve (approved=true) or reject (approved=false, note required) a collection or artifact at its current revision/version.
 - **`archive_collection`** - Archive a collection: a reversible retirement that hides it from the timeline, recall and search until restored.
+- **`brief`** - Open a session with ONE call instead of four.
 - **`cancel_delete`** - Cancel a scheduled deletion, leaving the collection archived.
 - **`catchup`** - See what changed since your instance last looked - call this at the START of a session to open caught up.
 - **`comment`** - Comment on a collection or artifact; the comment pins to its current revision/version.
@@ -54,6 +55,7 @@ running server, so it is exactly what the current release ships:
 - **`delete_collection`** - Schedule an ARCHIVED collection for permanent deletion.
 - **`delete_tag`** - Permanently delete a tag (`tag` is an id or name).
 - **`deprecate`** - Mark a memory stale by id so recall stops surfacing it (instances stop applying it), while it stays retrievable for audit - prefer this over forget when…
+- **`end_review`** - Take a collection out of review once you are done - the clean exit that complements set_review.
 - **`forget`** - Permanently remove a memory by id.
 - **`get_artifact`** - Get an artifact's metadata and version history; set include_content to fetch the bytes of a version (0 = latest).
 - **`get_collection`** - Get a collection with its member artifacts and tags.
@@ -76,6 +78,7 @@ running server, so it is exactly what the current release ships:
 - **`remember`** - Store a memory (markdown body).
 - **`rename_tag`** - Rename a tag (`tag` is an id or name).
 - **`reorder_artifacts`** - Set the order of a collection's files.
+- **`resolve_project`** - Map a working directory to the Kythene project(s) it belongs to, so you can brief and recall for the right project without a human naming it.
 - **`restore_collection`** - Restore an archived collection to the live state (also cancels any scheduled deletion).
 - **`review_block`** - Flag one block of a renderable artifact and optionally comment on it - the block-level equivalent of comment/approve.
 - **`revoke_share_code`** - Revoke a share code by id (from list_share_codes).
