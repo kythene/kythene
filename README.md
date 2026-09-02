@@ -40,19 +40,16 @@ endpoint at their own domain.
 
 ## Tools
 
-Kythene exposes **48** MCP tools. This list is generated from the
+Kythene exposes **43** MCP tools. This list is generated from the
 running server, so it is exactly what the current release ships:
 
 - **`activity`** - Report what you are working on (areas: file paths, modules, topics).
 - **`add_artifacts`** - Add files to an EXISTING collection instead of republishing (which would create a new collection and abandon its comments and history).
 - **`approve`** - Approve (approved=true) or reject (approved=false, note required) a collection or artifact at its current revision/version.
-- **`archive_collection`** - Archive a collection: a reversible retirement that hides it from the timeline, recall and search until restored.
 - **`brief`** - Open a session with ONE call instead of four.
-- **`cancel_delete`** - Cancel a scheduled deletion, leaving the collection archived.
 - **`catchup`** - See what changed since your instance last looked - call this at the START of a session to open caught up.
 - **`comment`** - Comment on a collection or artifact; the comment pins to its current revision/version.
 - **`create_share_code`** - Mint a share code for a tag (a label or a project) - a private link for someone outside the space.
-- **`delete_collection`** - Schedule an ARCHIVED collection for permanent deletion.
 - **`delete_tag`** - Permanently delete a tag (`tag` is an id or name).
 - **`deprecate`** - Mark a memory stale by id so recall stops surfacing it (instances stop applying it), while it stays retrievable for audit - prefer this over forget when…
 - **`end_review`** - Take a collection out of review once you are done - the clean exit that complements set_review.
@@ -62,7 +59,7 @@ running server, so it is exactly what the current release ships:
 - **`get_usage`** - How this workspace is being used over a window (default 30 days): recall volume and the zero-result rate (the share of recalls that came back empty - the…
 - **`get_workspace_guide`** - Read this workspace's operating manual - the house rules for writing here (style, tag taxonomy, memory vs collection, what belongs and what does not).
 - **`inbox`** - Feedback on your publishes since a time (comments, approvals, rejections).
-- **`link_memory`** - Link one memory to another (from_id -> to_id), creating a curated relationship in the memory graph.
+- **`link_memory`** - Create or remove a link between two memories over the from_id -> to_id edge.
 - **`list_projects`** - List the projects (project-kind tags) in the space - the valid `project` values for recall, remember and publish.
 - **`list_share_codes`** - List share codes.
 - **`list_spaces`** - Your member spaces - the valid share targets.
@@ -79,18 +76,16 @@ running server, so it is exactly what the current release ships:
 - **`rename_tag`** - Rename a tag (`tag` is an id or name).
 - **`reorder_artifacts`** - Set the order of a collection's files.
 - **`resolve_project`** - Map a working directory to the Kythene project(s) it belongs to, so you can brief and recall for the right project without a human naming it.
-- **`restore_collection`** - Restore an archived collection to the live state (also cancels any scheduled deletion).
 - **`review_block`** - Flag one block of a renderable artifact and optionally comment on it - the block-level equivalent of comment/approve.
 - **`revoke_share_code`** - Revoke a share code by id (from list_share_codes).
+- **`set_collection_state`** - Move a collection through its lifecycle by naming the target `state`: "archived" archives a live collection (a reversible retirement that hides it from the…
 - **`set_review`** - Turn the approval-review flow on or off for an existing collection (requested=true to request review, false to cancel).
 - **`set_share_pin`** - Set, change or (with an empty `pin`) clear a share code's second-factor PIN, WITHOUT changing the code - so rotating the PIN never invalidates the link already…
 - **`set_tag_password`** - Set (or clear) a tag's anonymous-view password.
 - **`set_workspace_guide`** - Replace this workspace's operating manual (owner/admin only).
-- **`share_to_space`** - Map a collection into another space you belong to (e.g. a shared client space).
+- **`share_collection`** - Map a collection into another space you belong to (e.g. a shared client space), or remove that mapping.
 - **`timeline`** - List the collections visible in your space, newest first.
-- **`unlink_memory`** - Remove an explicit link between two memories (from_id -> to_id).
 - **`unlock_share_code`** - Clear a share code's brute-force lockout so the holder can enter the PIN again (a code locks after too many wrong PINs).
-- **`unshare`** - Remove a collection's mapping from a space (not its origin).
 
 
 ## Clients
