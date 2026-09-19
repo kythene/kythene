@@ -38,23 +38,10 @@ Dynamic Client Registration** - the client registers itself and you authorise in
 the browser; there is no API key to copy. Self-host installs serve the same
 endpoint at their own domain.
 
-There is a second, optional server for looking after the workspace itself -
-share codes, the workspace guide, moving knowledge between workspaces:
-
-```
-https://kythene.com/mcp/kythene-manage
-```
-
-Add it as a second entry if you want it. Most people never do: keeping it
-separate means the everyday surface stays small, and every tool a client mounts
-sits in its context in every session whether it is used or not.
-
 ## Tools
 
-Kythene exposes **43** MCP tools: **38** on the
-endpoint above and **8** on the optional management server (a few
-sit on both). This list is generated from the running server, so it is exactly
-what the current release ships:
+Kythene exposes **43** MCP tools. This list is generated from the
+running server, so it is exactly what the current release ships:
 
 - **`approve`** - Approve (approved=true) or reject (approved=false, note required) a collection or artifact at its current revision/version.
 - **`brief`** - Open a session with ONE call instead of four.
@@ -81,23 +68,23 @@ what the current release ships:
 - **`list_pending`** - Your personal inbox across ALL your workspaces (#126): items addressed to YOU - approvals/rejections and comments on your work, block feedback, and memories…
 - **`list_projects`** - List the projects (project-kind tags) in the space - the valid `project` values for recall, remember and publish.
 - **`list_readers`** - Which instances read a collection or artifact (lineage).
-- **`list_share_codes`** - List share codes. *(management server)*
+- **`list_share_codes`** - List share codes.
 - **`list_spaces`** - Your member spaces - the valid share targets.
 - **`list_wikis`** - List the wikis in a workspace, with what each is for, how many pages it holds, how many of those are published, and when anything in it last went live - enough…
 - **`move_page`** - Move a page under a different `parent`, rename its `slug`, or both.
-- **`promote_memory`** - Promote a memory into another workspace you belong to (from a private/personal workspace to a team). *(management server)*
+- **`promote_memory`** - Promote a memory into another workspace you belong to (from a private/personal workspace to a team).
 - **`push_version`** - Push a new version of an existing artifact.
 - **`recall`** - Recall the most relevant context, with full content, in one call.
 - **`remember`** - Store a memory (markdown body).
 - **`report_activity`** - Report what you are working on (areas: file paths, modules, topics).
 - **`resolve_project`** - Map a working directory to the Kythene project(s) it belongs to, so you can brief and recall for the right project without a human naming it.
 - **`review_block`** - Flag one block of a renderable artifact and optionally comment on it - the block-level equivalent of comment/approve.
-- **`revoke_share_code`** - Revoke a share code by id (from list_share_codes). *(management server)*
+- **`revoke_share_code`** - Revoke a share code by id (from list_share_codes).
 - **`set_collection_state`** - Move a collection through its lifecycle by naming the target `state`: "archived" archives a live collection (a reversible retirement that hides it from the…
 - **`set_page_state`** - Move a page through its lifecycle by naming the target `state`: "published" makes the newest version the one readers see, and puts it into search and recall…
 - **`set_review`** - Turn the approval-review flow on or off for an existing collection (requested=true to request review, false to cancel).
-- **`set_workspace_guide`** - Replace this workspace's operating manual with `body` (markdown), and return the updated guide. *(management server)*
-- **`share_collection`** - Map a collection into another space you belong to (e.g. a shared client space), or remove that mapping. *(management server)*
+- **`set_workspace_guide`** - Replace this workspace's operating manual with `body` (markdown), and return the updated guide.
+- **`share_collection`** - Map a collection into another space you belong to (e.g. a shared client space), or remove that mapping.
 - **`update_page`** - Replace a page's body with `body`, in FULL - this is not an append.
 
 
