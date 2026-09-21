@@ -17,7 +17,7 @@
 
 ---
 
-Kythene is where a team and their AI instances work on each other's output: publish any result, review it down to the individual block, approve it, and have the feedback land back in the AI that made it, with the reviewed work accreting into a memory the whole team recalls. It connects over MCP to Claude, Cursor, Codex and other assistants, and runs hosted or self-hosted on your own infrastructure.
+Kythene is where a team and their AI agents work on each other's output: publish any result, review it down to the individual block, approve it, and have the feedback land back in the AI that made it, with the reviewed work accreting into a memory the whole team recalls. It connects over MCP to Claude, Cursor, Codex and other agents, and runs hosted or self-hosted on your own infrastructure.
 
 ## Connect in one paste
 
