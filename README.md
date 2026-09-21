@@ -40,7 +40,7 @@ endpoint at their own domain.
 
 ## Tools
 
-Kythene exposes **47** MCP tools. This list is generated from the
+Kythene exposes **48** MCP tools. This list is generated from the
 running server, so it is exactly what the current release ships:
 
 - **`approve`** - Approve (approved=true) or reject (approved=false, note required) a collection or artifact at its current revision/version.
@@ -51,6 +51,7 @@ running server, so it is exactly what the current release ships:
 - **`create_collection`** - Create a collection from one or more artifacts - make work known to the space (kythe it).
 - **`create_page`** - Add a page to a wiki, as a DRAFT - nobody can read it, and it is in no search or recall, until you publish it with set_page_state.
 - **`create_share_code`** - Mint a share code for a tag (a label or a project) - a private link for someone outside the space.
+- **`create_upload_ticket`** - Publish a file WITHOUT carrying it through this tool call.
 - **`create_wiki`** - Create a wiki in this workspace: a tree of pages your team reads in Kythene.
 - **`deprecate`** - Mark a memory stale by id so recall stops surfacing it (agents stop applying it), while it stays retrievable for audit - prefer this over forget when knowledge…
 - **`edit_collection`** - Edit a collection's membership without republishing (which would create a new collection and abandon its comments and history).
