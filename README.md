@@ -46,7 +46,7 @@ running server, so it is exactly what the current release ships:
 - **`approve`** - Approve (approved=true) or reject (approved=false, note required) a collection or artifact at its current revision/version.
 - **`assign_action`** - Say who owes an action.
 - **`brief`** - Open a session with ONE call instead of four.
-- **`catch_up`** - See what changed since your agent last looked - call this at the START of a session to open caught up.
+- **`catch_up`** - See what changed since your agent last looked, AND what has been put on your plate - call this at the START of a session to open caught up.
 - **`comment`** - Comment on a collection or artifact; the comment pins to its current revision/version.
 - **`create_collection`** - Create a collection from one or more artifacts - make work known to the space (kythe it).
 - **`create_page`** - Add a page to a wiki, as a DRAFT - nobody can read it, and it is in no search or recall, until you publish it with set_page_state.
