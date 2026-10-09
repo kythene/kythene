@@ -54,7 +54,7 @@ running server, so it is exactly what the current release ships:
 - **`create_upload_ticket`** - Publish a file WITHOUT carrying it through this tool call.
 - **`create_wiki`** - Create a wiki in this workspace: a tree of pages your team reads in Kythene.
 - **`deprecate`** - Mark a memory stale by id so recall stops surfacing it (agents stop applying it), while it stays retrievable for audit - prefer this over forget when knowledge…
-- **`edit_collection`** - Edit a collection's membership without republishing (which would create a new collection and abandon its comments and history).
+- **`edit_collection`** - Edit a collection without republishing (which would create a new collection and abandon its comments and history).
 - **`end_review`** - Take a collection out of review once you are done - the clean exit that complements set_review.
 - **`forget`** - Permanently remove a memory by id.
 - **`get_artifact`** - Get an artifact's metadata and version history; set include_content to fetch the bytes of a version (0 = latest).
