@@ -40,23 +40,25 @@ endpoint at their own domain.
 
 ## Tools
 
-Kythene exposes **48** MCP tools. This list is generated from the
+Kythene exposes **54** MCP tools. This list is generated from the
 running server, so it is exactly what the current release ships:
 
+- **`add_contact`** - Add a contact: `display_name`, and `identities` - each a `channel` (email, slack, phone, site:<app>) and an `id` on it.
 - **`approve`** - Approve (approved=true) or reject (approved=false, note required) a collection or artifact at its current revision/version.
 - **`assign_action`** - Say who owes an action.
 - **`brief`** - Open a session with ONE call instead of four.
 - **`catch_up`** - See what changed since your agent last looked, AND what has been put on your plate - call this at the START of a session to open caught up.
 - **`comment`** - Comment on a collection or artifact; the comment pins to its current revision/version.
-- **`create_collection`** - Create a collection from one or more artifacts - make work known to the space (kythe it).
+- **`create_collection`** - Create a collection from one or more artifacts - make work known to the workspace (kythe it).
 - **`create_page`** - Add a page to a wiki, as a DRAFT - nobody can read it, and it is in no search or recall, until you publish it with set_page_state.
-- **`create_share_code`** - Mint a share code for a tag (a label or a project) - a private link for someone outside the space.
+- **`create_share_code`** - Mint a share code for a tag (a label or a project) - a private link for someone outside the workspace.
 - **`create_upload_ticket`** - Publish a file WITHOUT carrying it through this tool call.
 - **`create_wiki`** - Create a wiki in this workspace: a tree of pages your team reads in Kythene.
 - **`deprecate`** - Mark a memory stale by id so recall stops surfacing it (agents stop applying it), while it stays retrievable for audit - prefer this over forget when knowledge…
 - **`edit_collection`** - Edit a collection without republishing (which would create a new collection and abandon its comments and history).
 - **`end_review`** - Take a collection out of review once you are done - the clean exit that complements set_review.
 - **`forget`** - Permanently remove a memory by id.
+- **`get_action`** - Read one action, and with `include_messages` its conversation: internal notes, replies (drafts until a person approves them) and what came in from outside,…
 - **`get_artifact`** - Get an artifact's metadata and version history; set include_content to fetch the bytes of a version (0 = latest).
 - **`get_collection`** - Get a collection with its member artifacts and tags.
 - **`get_inbox`** - Feedback on your publishes since a time (comments, approvals, rejections).
@@ -66,30 +68,34 @@ running server, so it is exactly what the current release ships:
 - **`get_workspace_guide`** - Read this workspace's operating manual: the house rules for writing here (style, tag taxonomy, memory vs collection, what belongs and what does not).
 - **`link_memory`** - Create or remove a link between two memories over the from_id -> to_id edge.
 - **`list_actions`** - Read the queue.
-- **`list_collections`** - List the collections visible in your space, newest first.
-- **`list_pages`** - Walk a wiki's tree: every page you can see, parent before child, with its `path`, its `state` and its `depth`.
+- **`list_collections`** - List the collections visible in your workspace, newest first.
+- **`list_contacts`** - List the workspace's contacts - people who ask or are asked for things but never sign in (customers, callers) - with how each is reached.
+- **`list_pages`** - Walk a wiki's tree: every page you can see, in tree order - each page followed by its own children, siblings in the order set with reorder_pages - with its…
 - **`list_pending`** - Your personal inbox across ALL your workspaces (#126): items addressed to YOU - approvals/rejections and comments on your work, block feedback, and memories…
-- **`list_projects`** - List the projects (project-kind tags) in the space - the valid `project` values for recall, remember and publish.
+- **`list_projects`** - List the projects (project-kind tags) in the workspace - the valid `project` values for recall, remember and create_collection.
 - **`list_readers`** - Which agents read a collection or artifact (lineage).
 - **`list_share_codes`** - List share codes.
-- **`list_spaces`** - Your member spaces - the valid share targets.
+- **`list_spaces`** - Your member workspaces - the valid share targets, and the values `space` takes.
 - **`list_wikis`** - List the wikis in a workspace, with what each is for, how many pages it holds, how many of those are published, and when anything in it last went live - enough…
+- **`message_action`** - Write on an action.
 - **`move_page`** - Move a page under a different `parent`, rename its `slug`, or both.
 - **`promote_memory`** - Promote a memory into another workspace you belong to (from a private/personal workspace to a team).
 - **`push_version`** - Push a new version of an existing artifact.
-- **`raise_action`** - Put a piece of work on the team's queue - the pillar that flows BOTH ways, so this is how you ask a person for something as well as how they ask you.
+- **`raise_action`** - Ask somebody for something - the queue flows BOTH ways, so this is how you ask a person as well as how they ask you.
 - **`recall`** - Recall the most relevant context, with full content, in one call.
 - **`remember`** - Store a memory (markdown body).
+- **`reorder_pages`** - Set the order of the pages directly under one `parent` - the order the tree shows them in, so a reader meets them in the order they should be read.
 - **`report_activity`** - Report what you are working on (areas: file paths, modules, topics).
 - **`resolve_project`** - Map a working directory to the Kythene project(s) it belongs to, so you can brief and recall for the right project without a human naming it.
 - **`review_block`** - Flag one block of a renderable artifact and optionally comment on it - the block-level equivalent of comment/approve.
 - **`revoke_share_code`** - Revoke a share code by id (from list_share_codes).
 - **`set_action_state`** - Move an action along by naming the target `state`: "in_progress" means you have started, which is yours to say as the assignee; "pending" means not now, or…
-- **`set_collection_state`** - Move a collection through its lifecycle by naming the target `state`: "archived" archives a live collection (a reversible retirement that hides it from the…
+- **`set_collection_state`** - Move a collection through its lifecycle by naming the target `state`: "archived" archives a live collection (a reversible retirement that hides it from…
 - **`set_page_state`** - Move a page through its lifecycle by naming the target `state`: "published" makes the newest version the one readers see, and puts it into search and recall…
 - **`set_review`** - Turn the approval-review flow on or off for an existing collection (requested=true to request review, false to cancel).
 - **`set_workspace_guide`** - Replace this workspace's operating manual with `body` (markdown), and return the updated guide.
-- **`share_collection`** - Map a collection into another space you belong to (e.g. a shared client space), or remove that mapping.
+- **`share_collection`** - Map a collection into another workspace you belong to (e.g. a shared client workspace), or remove that mapping.
+- **`share_wiki`** - Share a whole wiki with someone outside the workspace: mint a private link that admits its holder to the wiki's published pages - bar any section restricted to…
 - **`update_page`** - Replace a page's body with `body`, in FULL - this is not an append.
 
 
