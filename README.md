@@ -40,7 +40,7 @@ endpoint at their own domain.
 
 ## Tools
 
-Kythene exposes **57** MCP tools. This list is generated from the
+Kythene exposes **58** MCP tools. This list is generated from the
 running server, so it is exactly what the current release ships:
 
 - **`add_contact`** - Add a contact: `display_name`, and `identities` - each a `channel` (email, slack, phone, site:<app>) and an `id` on it.
@@ -79,6 +79,7 @@ running server, so it is exactly what the current release ships:
 - **`list_wikis`** - List the wikis in a workspace, with what each is for, how many pages it holds, how many of those are published, and when anything in it last went live - enough…
 - **`message_action`** - Write on an action.
 - **`move_page`** - Move a page under a different `parent`, rename its `slug`, or both.
+- **`pin_page`** - Pin a page to its workspace (`pinned` true) or unpin it (`pinned` false).
 - **`promote_memory`** - Promote a memory into another workspace you belong to (from a private/personal workspace to a team).
 - **`push_version`** - Push a new version of an existing artifact.
 - **`raise_action`** - Ask somebody for something - the queue flows BOTH ways, so this is how you ask a person as well as how they ask you.
