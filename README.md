@@ -40,7 +40,7 @@ endpoint at their own domain.
 
 ## Tools
 
-Kythene exposes **54** MCP tools. This list is generated from the
+Kythene exposes **57** MCP tools. This list is generated from the
 running server, so it is exactly what the current release ships:
 
 - **`add_contact`** - Add a contact: `display_name`, and `identities` - each a `channel` (email, slack, phone, site:<app>) and an `id` on it.
@@ -89,14 +89,17 @@ running server, so it is exactly what the current release ships:
 - **`resolve_project`** - Map a working directory to the Kythene project(s) it belongs to, so you can brief and recall for the right project without a human naming it.
 - **`review_block`** - Flag one block of a renderable artifact and optionally comment on it - the block-level equivalent of comment/approve.
 - **`revoke_share_code`** - Revoke a share code by id (from list_share_codes).
+- **`set_action_priority`** - Make an action "low", "normal" or "high" `priority`.
 - **`set_action_state`** - Move an action along by naming the target `state`: "in_progress" means you have started, which is yours to say as the assignee; "pending" means not now, or…
 - **`set_collection_state`** - Move a collection through its lifecycle by naming the target `state`: "archived" archives a live collection (a reversible retirement that hides it from…
 - **`set_page_state`** - Move a page through its lifecycle by naming the target `state`: "published" makes the newest version the one readers see, and puts it into search and recall…
 - **`set_review`** - Turn the approval-review flow on or off for an existing collection (requested=true to request review, false to cancel).
+- **`set_verification`** - Change how a published wiki page or a memory is kept current, by id: `every` puts it on a schedule (verify every 30, 90, 180 or 365 days - never verified, it's…
 - **`set_workspace_guide`** - Replace this workspace's operating manual with `body` (markdown), and return the updated guide.
 - **`share_collection`** - Map a collection into another workspace you belong to (e.g. a shared client workspace), or remove that mapping.
 - **`share_wiki`** - Share a whole wiki with someone outside the workspace: mint a private link that admits its holder to the wiki's published pages - bar any section restricted to…
 - **`update_page`** - Replace a page's body with `body`, in FULL - this is not an append.
+- **`verify`** - Say a published wiki page or a memory is still right, by id - call it once you have checked it against the live system (the code, the config, the running…
 
 
 ## Clients
