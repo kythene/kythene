@@ -40,7 +40,7 @@ endpoint at their own domain.
 
 ## Tools
 
-Kythene exposes **58** MCP tools. This list is generated from the
+Kythene exposes **64** MCP tools. This list is generated from the
 running server, so it is exactly what the current release ships:
 
 - **`add_contact`** - Add a contact: `display_name`, and `identities` - each a `channel` (email, slack, phone, site:<app>) and an `id` on it.
@@ -64,6 +64,7 @@ running server, so it is exactly what the current release ships:
 - **`get_inbox`** - Feedback on your publishes since a time (comments, approvals, rejections).
 - **`get_page`** - Read one page: its markdown `body`, its `state`, what links to it (`links_here` - who depends on it, which is what matters before you change something) and…
 - **`get_presence`** - Who is working on what right now (last 30 minutes), with areas touched by more than one agent flagged as conflicts.
+- **`get_skill`** - Read one skill.
 - **`get_usage`** - How this workspace is being used over a window (default 30 days): recall volume and the zero-result rate (the share of recalls that came back empty - the…
 - **`get_workspace_guide`** - Read this workspace's operating manual: the house rules for writing here (style, tag taxonomy, memory vs collection, what belongs and what does not).
 - **`link_memory`** - Create or remove a link between two memories over the from_id -> to_id edge.
@@ -75,12 +76,15 @@ running server, so it is exactly what the current release ships:
 - **`list_projects`** - List the projects (project-kind tags) in the workspace - the valid `project` values for recall, remember and create_collection.
 - **`list_readers`** - Which agents read a collection or artifact (lineage).
 - **`list_share_codes`** - List share codes.
+- **`list_share_views`** - When a collection was opened through a share link, newest first: each view's time, which link (`share_code_label` names who it was made for), the collection's…
+- **`list_skills`** - List this workspace's skills.
 - **`list_spaces`** - Your member workspaces - the valid share targets, and the values `space` takes.
 - **`list_wikis`** - List the wikis in a workspace, with what each is for, how many pages it holds, how many of those are published, and when anything in it last went live - enough…
 - **`message_action`** - Write on an action.
 - **`move_page`** - Move a page under a different `parent`, rename its `slug`, or both.
 - **`pin_page`** - Pin a page to its workspace (`pinned` true) or unpin it (`pinned` false).
 - **`promote_memory`** - Promote a memory into another workspace you belong to (from a private/personal workspace to a team).
+- **`publish_skill`** - Publish a skill for this workspace - a SKILL.md and its files - so the AI of every member whose toolkits hold it gets it over the workspace's connector on its…
 - **`push_version`** - Push a new version of an existing artifact.
 - **`raise_action`** - Ask somebody for something - the queue flows BOTH ways, so this is how you ask a person as well as how they ask you.
 - **`recall`** - Recall the most relevant context, with full content, in one call.
@@ -95,7 +99,9 @@ running server, so it is exactly what the current release ships:
 - **`set_collection_state`** - Move a collection through its lifecycle by naming the target `state`: "archived" archives a live collection (a reversible retirement that hides it from…
 - **`set_page_state`** - Move a page through its lifecycle by naming the target `state`: "published" makes the newest version the one readers see, and puts it into search and recall…
 - **`set_review`** - Turn the approval-review flow on or off for an existing collection (requested=true to request review, false to cancel).
+- **`set_skill_state`** - Move a skill through its lifecycle by naming the target `state`: "published" publishes the draft as the next version, for the members whose toolkits hold it -…
 - **`set_verification`** - Change how a published wiki page or a memory is kept current, by id: `every` puts it on a schedule (verify every 30, 90, 180 or 365 days - never verified, it's…
+- **`set_wiki_state`** - Archive, restore or delete a whole wiki by naming the target `state`: "archived" archives a live wiki - it leaves list_wikis and every reader, share link,…
 - **`set_workspace_guide`** - Replace this workspace's operating manual with `body` (markdown), and return the updated guide.
 - **`share_collection`** - Map a collection into another workspace you belong to (e.g. a shared client workspace), or remove that mapping.
 - **`share_wiki`** - Share a whole wiki with someone outside the workspace: mint a private link that admits its holder to the wiki's published pages - bar any section restricted to…
