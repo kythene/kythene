@@ -40,11 +40,12 @@ endpoint at their own domain.
 
 ## Tools
 
-Kythene exposes **64** MCP tools. This list is generated from the
+Kythene exposes **65** MCP tools. This list is generated from the
 running server, so it is exactly what the current release ships:
 
 - **`add_contact`** - Add a contact: `display_name`, and `identities` - each a `channel` (email, slack, phone, site:<app>) and an `id` on it.
 - **`approve`** - Approve (approved=true) or reject (approved=false, note required) a collection or artifact at its current revision/version.
+- **`ask_for_help`** - Send this workspace's team a request for help, a bug report or a feature request, with what you were doing attached.
 - **`assign_action`** - Say who owes an action.
 - **`brief`** - Open a session with ONE call instead of four.
 - **`catch_up`** - See what changed since your agent last looked, AND what has been put on your plate - call this at the START of a session to open caught up.
