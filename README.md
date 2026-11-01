@@ -40,16 +40,19 @@ endpoint at their own domain.
 
 ## Tools
 
-Kythene exposes **65** MCP tools. This list is generated from the
+Kythene exposes **73** MCP tools. This list is generated from the
 running server, so it is exactly what the current release ships:
 
 - **`add_contact`** - Add a contact: `display_name`, and `identities` - each a `channel` (email, slack, phone, site:<app>) and an `id` on it.
+- **`answer_question`** - Settle an open question with what the source said: the same record becomes a fact, keeping the question.
 - **`approve`** - Approve (approved=true) or reject (approved=false, note required) a collection or artifact at its current revision/version.
 - **`ask_for_help`** - Send this workspace's team a request for help, a bug report or a feature request, with what you were doing attached.
+- **`ask_question`** - Record an open QUESTION: something we need from a named source and don't have.
 - **`assign_action`** - Say who owes an action.
 - **`brief`** - Open a session with ONE call instead of four.
 - **`catch_up`** - See what changed since your agent last looked, AND what has been put on your plate - call this at the START of a session to open caught up.
 - **`comment`** - Comment on a collection or artifact; the comment pins to its current revision/version.
+- **`correct_record`** - Fix a record in place - for when we wrote it down wrong, not when the source changed it (that is replace_record).
 - **`create_collection`** - Create a collection from one or more artifacts - make work known to the workspace (kythe it).
 - **`create_page`** - Add a page to a wiki, as a DRAFT - nobody can read it, and it is in no search or recall, until you publish it with set_page_state.
 - **`create_share_code`** - Mint a share code for a tag (a label or a project) - a private link for someone outside the workspace.
@@ -58,13 +61,14 @@ running server, so it is exactly what the current release ships:
 - **`deprecate`** - Mark a memory stale by id so recall stops surfacing it (agents stop applying it), while it stays retrievable for audit - prefer this over forget when knowledge…
 - **`edit_collection`** - Edit a collection without republishing (which would create a new collection and abandon its comments and history).
 - **`end_review`** - Take a collection out of review once you are done - the clean exit that complements set_review.
-- **`forget`** - Permanently remove a memory by id.
+- **`forget`** - Permanently remove a memory by id - a fact, question or decision too (only who recorded it or a workspace admin may; deleting one that replaced another puts…
 - **`get_action`** - Read one action, and with `include_messages` its conversation: internal notes, replies (drafts until a person approves them) and what came in from outside,…
 - **`get_artifact`** - Get an artifact's metadata and version history; set include_content to fetch the bytes of a version (0 = latest).
 - **`get_collection`** - Get a collection with its member artifacts and tags.
 - **`get_inbox`** - Feedback on your publishes since a time (comments, approvals, rejections).
 - **`get_page`** - Read one page: its markdown `body`, its `state`, what links to it (`links_here` - who depends on it, which is what matters before you change something) and…
 - **`get_presence`** - Who is working on what right now (last 30 minutes), with areas touched by more than one agent flagged as conflicts.
+- **`get_record`** - Get one fact, open question or decision by id, with its source, date, how, status, area, evidence, any correction and the records it replaced or was replaced…
 - **`get_skill`** - Read one skill.
 - **`get_usage`** - How this workspace is being used over a window (default 30 days): recall volume and the zero-result rate (the share of recalls that came back empty - the…
 - **`get_workspace_guide`** - Read this workspace's operating manual: the house rules for writing here (style, tag taxonomy, memory vs collection, what belongs and what does not).
@@ -72,6 +76,7 @@ running server, so it is exactly what the current release ships:
 - **`list_actions`** - Read the queue.
 - **`list_collections`** - List the collections visible in your workspace, newest first.
 - **`list_contacts`** - List the workspace's contacts - people who ask or are asked for things but never sign in (customers, callers) - with how each is reached.
+- **`list_facts`** - List this workspace's facts, open questions and decisions, newest first - check here before you ask a client something or assume something we may already know.
 - **`list_pages`** - Walk a wiki's tree: every page you can see, in tree order - each page followed by its own children, siblings in the order set with reorder_pages - with its…
 - **`list_pending`** - Your personal inbox across ALL your workspaces (#126): items addressed to YOU - approvals/rejections and comments on your work, block feedback, and memories…
 - **`list_projects`** - List the projects (project-kind tags) in the workspace - the valid `project` values for recall, remember and create_collection.
@@ -89,8 +94,11 @@ running server, so it is exactly what the current release ships:
 - **`push_version`** - Push a new version of an existing artifact.
 - **`raise_action`** - Ask somebody for something - the queue flows BOTH ways, so this is how you ask a person as well as how they ask you.
 - **`recall`** - Recall the most relevant context, with full content, in one call.
+- **`record_decision`** - Record a DECISION we took - an assumption we are working to is a decision, not a fact.
+- **`record_fact`** - Record a FACT: what a named source - a client, a document, their site - told us, never our own guess.
 - **`remember`** - Store a memory (markdown body).
 - **`reorder_pages`** - Set the order of the pages directly under one `parent` - the order the tree shows them in, so a reader meets them in the order they should be read.
+- **`replace_record`** - Replace a settled fact or an in-effect decision with a new one of the same kind - when the source changed what they said, or we decided afresh.
 - **`report_activity`** - Report what you are working on (areas: file paths, modules, topics).
 - **`resolve_project`** - Map a working directory to the Kythene project(s) it belongs to, so you can brief and recall for the right project without a human naming it.
 - **`review_block`** - Flag one block of a renderable artifact and optionally comment on it - the block-level equivalent of comment/approve.
