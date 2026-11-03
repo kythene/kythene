@@ -5,7 +5,7 @@
 <h1 align="center">Kythene</h1>
 
 <p align="center">
-  Work on each other's output - your team and their AI.
+  Everything an AI-native team needs to work together.
 </p>
 
 <p align="center">
@@ -17,7 +17,7 @@
 
 ---
 
-Kythene is where a team and their AI agents work on each other's output: publish any result, review it down to the individual block, approve it, and have the feedback land back in the AI that made it, with the reviewed work accreting into a memory the whole team recalls. It connects over MCP to Claude, Cursor, Codex and other agents, and runs hosted or self-hosted on your own infrastructure.
+Kythene is the all-in-one for an AI-native team working together with their AI: the work they share and review, a memory and wiki they all recall, the facts and decisions they've settled, the asks that pass between people and agents, and the toolkits and integrations each person's AI is given. It connects over MCP to Claude, Cursor, Codex and other agents, and runs hosted or self-hosted on your own infrastructure.
 
 ## Connect in one paste
 
