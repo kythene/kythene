@@ -40,7 +40,7 @@ endpoint at their own domain.
 
 ## Tools
 
-Kythene exposes **84** MCP tools. This list is generated from the
+Kythene exposes **85** MCP tools. This list is generated from the
 running server, so it is exactly what the current release ships:
 
 - **`add_contact`** - Add a contact: `display_name`, and `identities` - each a `channel` (email, slack, phone, site:<app>) and an `id` on it.
@@ -63,7 +63,8 @@ running server, so it is exactly what the current release ships:
 - **`describe_table`** - Describe one table: its columns (ref, name, type, select options, what a reference points at, and each link - the table it links to and how many rows each side…
 - **`edit_collection`** - Edit a collection without republishing (which would create a new collection and abandon its comments and history).
 - **`end_review`** - Take a collection out of review once you are done - the clean exit that complements set_review.
-- **`export_csv`** - Export a table's rows, or those a filter matches, as CSV text: a header row of column names, a link as the linked rows' labels, a reference as its link, a list…
+- **`export_csv`** - Export a table's rows, or those a filter matches, as CSV: a header row of column names, a link as the linked rows' labels, a reference as its link, a list in…
+- **`export_status`** - Where an export export_csv started as a file has got to: pending or running while it builds, ready with a download_url and when it expires, or failed with why.
 - **`forget`** - Permanently remove a memory by id - a fact, question or decision too (only who recorded it or a workspace admin may; deleting one that replaced another puts…
 - **`get_action`** - Read one action, and with `include_messages` its conversation: internal notes, replies (drafts until a person approves them) and what came in from outside,…
 - **`get_artifact`** - Get an artifact's metadata and version history; set include_content to fetch the bytes of a version (0 = latest).
@@ -76,7 +77,7 @@ running server, so it is exactly what the current release ships:
 - **`get_skill`** - Read one skill.
 - **`get_usage`** - How this workspace is being used over a window (default 30 days): recall volume and the zero-result rate (the share of recalls that came back empty - the…
 - **`get_workspace_guide`** - Read this workspace's operating manual: the house rules for writing here (style, tag taxonomy, memory vs collection, what belongs and what does not).
-- **`import_csv`** - Fill a table from CSV text (a header row, then up to 1000 rows), all or nothing, in two steps with the same arguments: confirm false (the default) is the…
+- **`import_csv`** - Fill a table from CSV text (a header row, then the rows, up to 5 MB), all or nothing, in two steps.
 - **`insert_rows`** - Add rows to a table, 1-1000 in one call, all or nothing: if any row is refused nothing is written and the error names it as items[N].
 - **`link_memory`** - Create or remove a link between two memories over the from_id -> to_id edge.
 - **`list_actions`** - Read the queue.
