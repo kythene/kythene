@@ -40,7 +40,7 @@ endpoint at their own domain.
 
 ## Tools
 
-Kythene exposes **85** MCP tools. This list is generated from the
+Kythene exposes **87** MCP tools. This list is generated from the
 running server, so it is exactly what the current release ships:
 
 - **`add_contact`** - Add a contact: `display_name`, and `identities` - each a `channel` (email, slack, phone, site:<app>) and an `id` on it.
@@ -83,7 +83,8 @@ running server, so it is exactly what the current release ships:
 - **`list_actions`** - Read the queue.
 - **`list_collections`** - List the collections visible in your workspace, newest first.
 - **`list_contacts`** - List the workspace's contacts - people who ask or are asked for things but never sign in (customers, callers) - with how each is reached.
-- **`list_facts`** - List this workspace's facts, open questions and decisions, newest first - check here before you ask a client something or assume something we may already know.
+- **`list_documents`** - List this workspace's Documents - the key documents people have marked as the current, go-to version - that you can read.
+- **`list_facts`** - List this workspace's facts, open questions and decisions, newest first - check here before you ask someone something or assume something we may already know.
 - **`list_pages`** - Walk a wiki's tree: every page you can see, in tree order - each page followed by its own children, siblings in the order set with reorder_pages - with its…
 - **`list_pending`** - Your personal inbox across ALL your workspaces (#126): items addressed to YOU - approvals/rejections and comments on your work, block feedback, and memories…
 - **`list_projects`** - List the projects (project-kind tags) in the workspace - the valid `project` values for recall, remember and create_collection.
@@ -104,7 +105,7 @@ running server, so it is exactly what the current release ships:
 - **`raise_action`** - Ask somebody for something - the queue flows BOTH ways, so this is how you ask a person as well as how they ask you.
 - **`recall`** - Recall the most relevant context, with full content, in one call.
 - **`record_decision`** - Record a DECISION we took - an assumption we are working to is a decision, not a fact.
-- **`record_fact`** - Record a FACT: what a named source - a client, a document, their site - told us, never our own guess.
+- **`record_fact`** - Record a FACT: what a named, authoritative source - a customer, a supplier, a document, someone speaking for the business - told us, never our own guess.
 - **`remember`** - Store a memory (markdown body).
 - **`reorder_pages`** - Set the order of the pages directly under one `parent` - the order the tree shows them in, so a reader meets them in the order they should be read.
 - **`replace_record`** - Replace a settled fact or an in-effect decision with a new one of the same kind - when the source changed what they said, or we decided afresh.
@@ -116,6 +117,7 @@ running server, so it is exactly what the current release ships:
 - **`set_action_priority`** - Make an action "low", "normal" or "high" `priority`.
 - **`set_action_state`** - Move an action along by naming the target `state`: "in_progress" means you have started, which is yours to say as the assignee; "pending" means not now, or…
 - **`set_collection_state`** - Move a collection through its lifecycle by naming the target `state`: "archived" archives a live collection (a reversible retirement that hides it from…
+- **`set_documents_default`** - Set the tag Documents opens filtered by, for everyone in the workspace; an empty `tag` opens it on every document.
 - **`set_page_state`** - Move a page through its lifecycle by naming the target `state`: "published" makes the newest version the one readers see, and puts it into search and recall…
 - **`set_review`** - Turn the approval-review flow on or off for an existing collection (requested=true to request review, false to cancel).
 - **`set_skill_state`** - Move a skill through its lifecycle by naming the target `state`: "published" publishes the draft as the next version, for the members whose toolkits hold it -…
