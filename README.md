@@ -40,7 +40,7 @@ endpoint at their own domain.
 
 ## Tools
 
-Kythene exposes **87** MCP tools. This list is generated from the
+Kythene exposes **88** MCP tools. This list is generated from the
 running server, so it is exactly what the current release ships:
 
 - **`add_contact`** - Add a contact: `display_name`, and `identities` - each a `channel` (email, slack, phone, site:<app>) and an `id` on it.
@@ -129,6 +129,7 @@ running server, so it is exactly what the current release ships:
 - **`table_history`** - Read the changes to a table's structure, newest first: the table made, renamed or archived, columns added, renamed or retyped, links made or changed - with who…
 - **`update_page`** - Replace a page's body with `body`, in FULL - this is not an append.
 - **`update_rows`** - Change rows of a table, 1-1000 in one call, all or nothing (a refusal names items[N] and writes nothing).
+- **`upsert_rows`** - Write rows keyed on a unique column, so a generator can rerun: a row whose key is already there is updated (only what changed is written, so its history stays…
 - **`verify`** - Say a published wiki page or a memory is still right, by id - call it once you have checked it against the live system (the code, the config, the running…
 
 
@@ -140,9 +141,11 @@ MCP-capable assistant.
 ## Pricing
 
 - **Free solo** (hosted) - Free, one signed-in user
-- **Team** (hosted) - $15 per user / month, or $150 per user / year
+- **Team** (hosted) - $25 per user / month, or $250 per user / year
+- **Business** (hosted) - $45 per user / month, or $450 per user / year
 - **Free self-host** - Free, one signed-in user
-- **Self-host Team** - $150 per user / year, billed annually · from 5 users
+- **Self-host Team** - $250 per user / year, billed annually · from 5 users
+- **Self-host Business** - $450 per user / year, billed annually · from 5 users
 
 Enterprise (hosted or self-host) is contact-us. Full pricing:
 **[www.kythene.com/pricing](https://www.kythene.com/pricing)**.
