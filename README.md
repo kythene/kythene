@@ -40,7 +40,7 @@ endpoint at their own domain.
 
 ## Tools
 
-Kythene exposes **88** MCP tools. This list is generated from the
+Kythene exposes **89** MCP tools. This list is generated from the
 running server, so it is exactly what the current release ships:
 
 - **`add_contact`** - Add a contact: `display_name`, and `identities` - each a `channel` (email, slack, phone, site:<app>) and an `id` on it.
@@ -101,6 +101,7 @@ running server, so it is exactly what the current release ships:
 - **`promote_memory`** - Promote a memory into another workspace you belong to (from a private/personal workspace to a team).
 - **`publish_skill`** - Publish a skill for this workspace - a SKILL.md and its files - so the AI of every member whose toolkits hold it gets it over the workspace's connector on its…
 - **`push_version`** - Push a new version of an existing artifact.
+- **`push_versions`** - Push new versions of several existing artifacts in one call, all or none.
 - **`query_rows`** - Read a page of a table's rows, filtered and sorted, newest pages by next_cursor.
 - **`raise_action`** - Ask somebody for something - the queue flows BOTH ways, so this is how you ask a person as well as how they ask you.
 - **`recall`** - Recall the most relevant context, with full content, in one call.
